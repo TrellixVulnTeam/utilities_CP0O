@@ -961,5 +961,5 @@ info:
   output: "target/nextflow/download/download_basespace"
   executable: "target/nextflow/download/download_basespace/download_basespace"
   viash_version: "0.5.8"
-  git_commit: "5ff97ffa5e9f763c1e4aa50143b02e5f17451119"
+  git_commit: "6538da384a5e0f16dde059f92230c71142095251"
   git_remote: "https://github.com/czbiohub/utilities"
