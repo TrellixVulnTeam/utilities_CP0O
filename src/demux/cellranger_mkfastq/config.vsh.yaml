@@ -1,0 +1,43 @@
+functionality:
+  name: cellranger_mkfastq
+  namespace: demux
+  description: Demultiplex raw sequencing data
+  usage: |
+    cellranger_mkfastq \
+      --input /path/to/bcl \
+      --sample_sheet SampleSheet.csv \
+      --output /path/to/output
+  arguments:
+    # - type: string
+    #   name: --exp_id
+    #   description: The experiment ID
+    - type: file
+      name: --input
+      description: Path to the untarred BCL files. Expects 'RunParameters.xml' at './'.
+      example: /path/to/bcl
+      required: true
+    - type: file
+      name: --sample_sheet
+      description: The path to the sample sheet.
+      example: SampleSheet.csv
+    - type: file
+      name: --output
+      direction: output
+      description: The folder to store the demux results
+      example: "/path/to/output"
+      required: true
+    - type: file
+      name: --reports
+      direction: output
+      description: The folder to store the demux results
+      example: "/path/to/reports"
+      required: false
+  resources:
+    - type: python_script
+      path: script.py
+  tests:
+    - type: python_script
+      path: test.py
+platforms:
+  - type: docker
+    image: ghcr.io/data-intuitive/cellranger:6.1
