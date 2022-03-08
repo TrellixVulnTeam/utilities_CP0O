@@ -1,12 +1,12 @@
 namespace	functionality	platform	test_name	exit_code	duration	result
 download	sync_resources_test	docker	build_executable	1	0	ERROR
 multiomics	cellranger_arc_count	docker	build_executable	1	0	ERROR
-download	download_file	docker	build_executable	1	0	ERROR
 qc	check_samplesheet	docker	build_executable	1	0	ERROR
-download	download_basespace	docker	build_executable	1	0	ERROR
-demux	cellranger_mkfastq	docker	build_executable	1	0	ERROR
-multiomics	cellranger_cite_seq	docker	build_executable	1	0	ERROR
+demux	cellranger_mkfastq	docker	build_executable	1	2	ERROR
+download	download_file	docker	build_executable	1	2	ERROR
 demux	bcl2fastq	docker	build_executable	1	0	ERROR
-multiomics	cellranger_arc_aggr	docker	build_executable	1	0	ERROR
+download	download_basespace	docker	build_executable	1	0	ERROR
 combine	combine_tables	docker	build_executable	1	0	ERROR
+multiomics	cellranger_cite_seq	docker	build_executable	1	0	ERROR
 alignment	cellranger_count	docker	build_executable	1	0	ERROR
+multiomics	cellranger_arc_aggr	docker	build_executable	1	0	ERROR

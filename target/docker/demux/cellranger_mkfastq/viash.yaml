@@ -786,19 +786,23 @@ functionality:
       
       
       echo "Running cellranger demux"
+      orig_pwd=\`pwd\`
       work_dir="\$tmpdir/out"
       mkdir -p "\$work_dir"
       
       id=myoutput
       
+      cd "\$work_dir"
       cellranger mkfastq \\
         --id "\$id" \\
         --sample-sheet "\$par_sample_sheet" \\
         --run "\$par_input" \\
-        --output-dir "\$work_dir" \\
         "\${extra_params[@]}" \\
         --disable-ui
+        # --output-dir "\$work_dir" \\
+      cd "\$orig_pwd"
       
+      ls -l "\$work_dir/\$id/outs/"
       if [ -d "\$work_dir/\$id/outs/" ]; then
         mv "\$work_dir/\$id/outs/fastq_path" "\$par_output/"
       fi
@@ -841,5 +845,5 @@ info:
   output: "target/docker/demux/cellranger_mkfastq"
   executable: "target/docker/demux/cellranger_mkfastq/cellranger_mkfastq"
   viash_version: "0.5.8"
-  git_commit: "6538da384a5e0f16dde059f92230c71142095251"
+  git_commit: "2e00100b3465e391c99058aba91410dba973c2b2"
   git_remote: "https://github.com/czbiohub/utilities"
