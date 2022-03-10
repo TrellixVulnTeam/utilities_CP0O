@@ -460,7 +460,7 @@ functionality:
       #   ViashDockerFile
       function ViashDockerfile {
         cat << 'VIASHDOCKER'
-      FROM ghcr.io/data-intuitive/cellranger:6.1
+      FROM ghcr.io/data-intuitive/cellranger_arc:6.1
       
       RUN :
       VIASHDOCKER
@@ -842,7 +842,7 @@ functionality:
 platform:
   type: "docker"
   id: "docker"
-  image: "ghcr.io/data-intuitive/cellranger:6.1"
+  image: "ghcr.io/data-intuitive/cellranger_arc:6.1"
   target_registry: ""
   namespace_separator: "_"
   resolve_volume: "Automatic"
@@ -859,5 +859,5 @@ info:
   output: "target/docker/multiomics/cellranger_arc_count"
   executable: "target/docker/multiomics/cellranger_arc_count/cellranger_arc_count"
   viash_version: "0.5.8"
-  git_commit: "2e00100b3465e391c99058aba91410dba973c2b2"
+  git_commit: "4037e885bbe76ca135ba9f475ff8629733293665"
   git_remote: "https://github.com/czbiohub/utilities"

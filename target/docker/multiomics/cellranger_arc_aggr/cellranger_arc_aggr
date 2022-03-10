@@ -394,7 +394,7 @@ function ViashDockerSetup {
 #   ViashDockerFile
 function ViashDockerfile {
   cat << 'VIASHDOCKER'
-FROM ghcr.io/data-intuitive/cellranger:6.1
+FROM ghcr.io/data-intuitive/cellranger_arc:2.0
 
 RUN pip install --upgrade pip && \
   pip install --no-cache-dir "numpy" "pandas" "scanpy"

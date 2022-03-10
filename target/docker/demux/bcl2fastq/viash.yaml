@@ -845,5 +845,5 @@ info:
   output: "target/docker/demux/bcl2fastq"
   executable: "target/docker/demux/bcl2fastq/bcl2fastq"
   viash_version: "0.5.8"
-  git_commit: "2e00100b3465e391c99058aba91410dba973c2b2"
+  git_commit: "4037e885bbe76ca135ba9f475ff8629733293665"
   git_remote: "https://github.com/czbiohub/utilities"
