@@ -698,13 +698,13 @@ functionality:
       
       ViashDockerInstallationCheck
       if [ $VIASH_MODE == "docker_setup" ]; then
-        ViashDockerSetup '/multiomics_cellranger_arc_aggr:main_build' "$VIASH_DOCKER_SETUP_STRATEGY"
+        ViashDockerSetup 'ghcr.io/multiomics_cellranger_arc_aggr:main_build' "$VIASH_DOCKER_SETUP_STRATEGY"
         exit 0
       fi
-      ViashDockerSetup '/multiomics_cellranger_arc_aggr:main_build' ifneedbepullelsecachedbuild
+      ViashDockerSetup 'ghcr.io/multiomics_cellranger_arc_aggr:main_build' ifneedbepullelsecachedbuild
       if [ $VIASH_MODE == "docker_debug" ]; then
-        ViashNotice "+ docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t '/multiomics_cellranger_arc_aggr:main_build'"
-        docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t '/multiomics_cellranger_arc_aggr:main_build'
+        ViashNotice "+ docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t 'ghcr.io/multiomics_cellranger_arc_aggr:main_build'"
+        docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t 'ghcr.io/multiomics_cellranger_arc_aggr:main_build'
         exit 0
       fi
       
@@ -765,7 +765,7 @@ functionality:
       trap ViashPerformChown EXIT
       
       
-      cat << VIASHEOF | eval docker run --entrypoint=bash -i --rm $VIASH_EXTRA_MOUNTS /multiomics_cellranger_arc_aggr:main_build
+      cat << VIASHEOF | eval docker run --entrypoint=bash -i --rm $VIASH_EXTRA_MOUNTS ghcr.io/multiomics_cellranger_arc_aggr:main_build
       set -e
       tempscript=\$(mktemp "$VIASH_TEMP/viash-run-cellranger_arc_aggr-XXXXXX")
       function clean_up {
@@ -917,7 +917,7 @@ platform:
   type: "docker"
   id: "docker"
   image: "ghcr.io/data-intuitive/cellranger_arc:2.0"
-  target_registry: ""
+  target_registry: "ghcr.io"
   namespace_separator: "_"
   resolve_volume: "Automatic"
   chown: true
@@ -948,5 +948,5 @@ info:
   output: "target/docker/multiomics/cellranger_arc_aggr"
   executable: "target/docker/multiomics/cellranger_arc_aggr/cellranger_arc_aggr"
   viash_version: "0.5.8"
-  git_commit: "4037e885bbe76ca135ba9f475ff8629733293665"
+  git_commit: "77d616aea2964f1dda66ce142590d90f7dc76282"
   git_remote: "https://github.com/czbiohub/utilities"

@@ -632,13 +632,13 @@ eval set -- $VIASH_POSITIONAL_ARGS
 
 ViashDockerInstallationCheck
 if [ $VIASH_MODE == "docker_setup" ]; then
-  ViashDockerSetup '/multiomics_cellranger_arc_aggr:main_build' "$VIASH_DOCKER_SETUP_STRATEGY"
+  ViashDockerSetup 'ghcr.io/multiomics_cellranger_arc_aggr:main_build' "$VIASH_DOCKER_SETUP_STRATEGY"
   exit 0
 fi
-ViashDockerSetup '/multiomics_cellranger_arc_aggr:main_build' ifneedbepullelsecachedbuild
+ViashDockerSetup 'ghcr.io/multiomics_cellranger_arc_aggr:main_build' ifneedbepullelsecachedbuild
 if [ $VIASH_MODE == "docker_debug" ]; then
-  ViashNotice "+ docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t '/multiomics_cellranger_arc_aggr:main_build'"
-  docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t '/multiomics_cellranger_arc_aggr:main_build'
+  ViashNotice "+ docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t 'ghcr.io/multiomics_cellranger_arc_aggr:main_build'"
+  docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t 'ghcr.io/multiomics_cellranger_arc_aggr:main_build'
   exit 0
 fi
 
@@ -699,7 +699,7 @@ function ViashPerformChown {
 trap ViashPerformChown EXIT
 
 
-cat << VIASHEOF | eval docker run --entrypoint=bash -i --rm $VIASH_EXTRA_MOUNTS /multiomics_cellranger_arc_aggr:main_build
+cat << VIASHEOF | eval docker run --entrypoint=bash -i --rm $VIASH_EXTRA_MOUNTS ghcr.io/multiomics_cellranger_arc_aggr:main_build
 set -e
 tempscript=\$(mktemp "$VIASH_TEMP/viash-run-cellranger_arc_aggr-XXXXXX")
 function clean_up {

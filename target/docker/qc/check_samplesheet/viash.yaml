@@ -579,13 +579,13 @@ functionality:
       
       ViashDockerInstallationCheck
       if [ $VIASH_MODE == "docker_setup" ]; then
-        ViashDockerSetup '/qc_check_samplesheet:main_build' "$VIASH_DOCKER_SETUP_STRATEGY"
+        ViashDockerSetup 'ghcr.io/qc_check_samplesheet:main_build' "$VIASH_DOCKER_SETUP_STRATEGY"
         exit 0
       fi
-      ViashDockerSetup '/qc_check_samplesheet:main_build' ifneedbepullelsecachedbuild
+      ViashDockerSetup 'ghcr.io/qc_check_samplesheet:main_build' ifneedbepullelsecachedbuild
       if [ $VIASH_MODE == "docker_debug" ]; then
-        ViashNotice "+ docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t '/qc_check_samplesheet:main_build'"
-        docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t '/qc_check_samplesheet:main_build'
+        ViashNotice "+ docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t 'ghcr.io/qc_check_samplesheet:main_build'"
+        docker run --entrypoint=bash -i --rm -v "$(pwd)":/pwd --workdir /pwd -t 'ghcr.io/qc_check_samplesheet:main_build'
         exit 0
       fi
       
@@ -629,7 +629,7 @@ functionality:
       trap ViashPerformChown EXIT
       
       
-      cat << VIASHEOF | eval docker run --entrypoint=bash -i --rm $VIASH_EXTRA_MOUNTS /qc_check_samplesheet:main_build
+      cat << VIASHEOF | eval docker run --entrypoint=bash -i --rm $VIASH_EXTRA_MOUNTS ghcr.io/qc_check_samplesheet:main_build
       set -e
       tempscript=\$(mktemp "$VIASH_TEMP/viash-run-check_samplesheet-XXXXXX")
       function clean_up {
@@ -720,7 +720,7 @@ platform:
   type: "docker"
   id: "docker"
   image: "python:3.9"
-  target_registry: ""
+  target_registry: "ghcr.io"
   namespace_separator: "_"
   resolve_volume: "Automatic"
   chown: true
@@ -736,5 +736,5 @@ info:
   output: "target/docker/qc/check_samplesheet"
   executable: "target/docker/qc/check_samplesheet/check_samplesheet"
   viash_version: "0.5.8"
-  git_commit: "4037e885bbe76ca135ba9f475ff8629733293665"
+  git_commit: "77d616aea2964f1dda66ce142590d90f7dc76282"
   git_remote: "https://github.com/czbiohub/utilities"
