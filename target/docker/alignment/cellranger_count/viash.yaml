@@ -821,5 +821,5 @@ info:
   output: "target/docker/alignment/cellranger_count"
   executable: "target/docker/alignment/cellranger_count/cellranger_count"
   viash_version: "0.5.8"
-  git_commit: "77d616aea2964f1dda66ce142590d90f7dc76282"
+  git_commit: "a22ea10d30afd03e6fddaf0810b1933e423dd1ee"
   git_remote: "https://github.com/czbiohub/utilities"
