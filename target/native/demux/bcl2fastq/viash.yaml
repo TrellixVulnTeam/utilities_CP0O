@@ -455,5 +455,5 @@ info:
   output: "target/native/demux/bcl2fastq"
   executable: "target/native/demux/bcl2fastq/bcl2fastq"
   viash_version: "0.5.10.1"
-  git_commit: "e85aff237d855f3975f1c8cbd08e7b2ab8c03af8"
+  git_commit: "c872821a4f1025963a05c8b8ecc18044c06ba568"
   git_remote: "https://github.com/czbiohub/utilities"

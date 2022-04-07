@@ -8,14 +8,14 @@
                   qc    check_samplesheet               docker                start                                        [0m
             download  sync_resources_test               docker                start                                        [0m
 [32m            download  sync_resources_test               docker     build_executable         0        0              SUCCESS[0m
-[31m            download  sync_resources_test               docker          run_test.sh         1        1                ERROR[0m
+[31m            download  sync_resources_test               docker          run_test.sh         1        2                ERROR[0m
              combine       combine_tables               docker                start                                        [0m
 [32m             combine       combine_tables               docker     build_executable         0        0              SUCCESS[0m
 [33m             combine       combine_tables               docker                tests        -1        0              MISSING[0m
            alignment     cellranger_count               docker                start                                        [0m
-[32m            download        download_file               docker     build_executable         0        7              SUCCESS[0m
+[32m            download        download_file               docker     build_executable         0        8              SUCCESS[0m
 [32m            download        download_file               docker          run_test.sh         0        1              SUCCESS[0m
             download   download_basespace               docker                start                                        [0m
 [32m            download   download_basespace               docker     build_executable         0        0              SUCCESS[0m
-[32m            download   download_basespace               docker          run_test.sh         0       48              SUCCESS[0m
+[32m            download   download_basespace               docker          run_test.sh         0       46              SUCCESS[0m
 /home/runner/work/utilities/utilities/resources_test/bs_195891710
