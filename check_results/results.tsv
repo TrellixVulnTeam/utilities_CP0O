@@ -1,21 +1,32 @@
            namespace        functionality             platform            test_name exit_code duration               result[0m
                demux            bcl2fastq               docker                start                                        [0m
+             convert convert_10x_h5_to_h5ad               docker                start                                        [0m
+[32m             convert convert_10x_h5_to_h5ad               docker     build_executable         0        0              SUCCESS[0m
+[33m             convert convert_10x_h5_to_h5ad               docker                tests        -1        0              MISSING[0m
+             convert convert_10x_h5_to_h5mu               docker                start                                        [0m
+               demux   cellranger_mkfastq               docker                start                                        [0m
+[32m             convert convert_10x_h5_to_h5mu               docker     build_executable         0        0              SUCCESS[0m
+[33m             convert convert_10x_h5_to_h5mu               docker                tests        -1        0              MISSING[0m
+            download        download_file               docker                start                                        [0m
+          multiomics cellranger_arc_count               docker                start                                        [0m
+[32m          multiomics cellranger_arc_count               docker     build_executable         0        0              SUCCESS[0m
+[33m          multiomics cellranger_arc_count               docker                tests        -1        0              MISSING[0m
+          multiomics  cellranger_arc_aggr               docker                start                                        [0m
+[32m          multiomics  cellranger_arc_aggr               docker     build_executable         0        0              SUCCESS[0m
+[33m          multiomics  cellranger_arc_aggr               docker                tests        -1        0              MISSING[0m
           multiomics  cellranger_cite_seq               docker                start                                        [0m
 [32m          multiomics  cellranger_cite_seq               docker     build_executable         0        0              SUCCESS[0m
 [33m          multiomics  cellranger_cite_seq               docker                tests        -1        0              MISSING[0m
-            download        download_file               docker                start                                        [0m
-               demux   cellranger_mkfastq               docker                start                                        [0m
-                  qc    check_samplesheet               docker                start                                        [0m
-            download  sync_resources_test               docker                start                                        [0m
-[32m            download  sync_resources_test               docker     build_executable         0        0              SUCCESS[0m
-[31m            download  sync_resources_test               docker          run_test.sh         1        1                ERROR[0m
+            download   download_basespace               docker                start                                        [0m
+[32m            download        download_file               docker     build_executable         0        8              SUCCESS[0m
+[32m            download        download_file               docker          run_test.sh         0        1              SUCCESS[0m
              combine       combine_tables               docker                start                                        [0m
 [32m             combine       combine_tables               docker     build_executable         0        0              SUCCESS[0m
 [33m             combine       combine_tables               docker                tests        -1        0              MISSING[0m
            alignment     cellranger_count               docker                start                                        [0m
-[32m            download        download_file               docker     build_executable         0        7              SUCCESS[0m
-[32m            download        download_file               docker          run_test.sh         0        1              SUCCESS[0m
-            download   download_basespace               docker                start                                        [0m
+            download  sync_resources_test               docker                start                                        [0m
+[32m            download  sync_resources_test               docker     build_executable         0        0              SUCCESS[0m
+[31m            download  sync_resources_test               docker          run_test.sh         1        1                ERROR[0m
 [32m            download   download_basespace               docker     build_executable         0        0              SUCCESS[0m
-[32m            download   download_basespace               docker          run_test.sh         0       40              SUCCESS[0m
+[32m            download   download_basespace               docker          run_test.sh         0      113              SUCCESS[0m
 /home/runner/work/utilities/utilities/resources_test/bs_195891710

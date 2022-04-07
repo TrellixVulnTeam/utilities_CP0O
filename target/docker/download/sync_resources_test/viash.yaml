@@ -758,5 +758,5 @@ info:
   output: "target/docker/download/sync_resources_test"
   executable: "target/docker/download/sync_resources_test/sync_resources_test"
   viash_version: "0.5.10.1"
-  git_commit: "5b02eeb54c604c6fabeb2e6c2e5efc380e815888"
+  git_commit: "82e007983e66859c762f64727ed34952ed7564be"
   git_remote: "https://github.com/czbiohub/utilities"
