@@ -862,5 +862,5 @@ info:
   output: "target/docker/multiomics/cellranger_cite_seq"
   executable: "target/docker/multiomics/cellranger_cite_seq/cellranger_cite_seq"
   viash_version: "0.5.10.1"
-  git_commit: "c872821a4f1025963a05c8b8ecc18044c06ba568"
+  git_commit: "5b02eeb54c604c6fabeb2e6c2e5efc380e815888"
   git_remote: "https://github.com/czbiohub/utilities"

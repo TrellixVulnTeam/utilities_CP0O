@@ -176,6 +176,13 @@ function ViashHelp {
   echo ""
 
 
+  echo "   --chemistry"
+  echo "        type: string"
+  echo "        default: auto"
+  echo "        Assay configuration. Options are: auto, threeprime, fiveprime, SC3Pv1, SC3Pv2, SC3Pv3, SC3Pv3LT, SC3Pv3HT, SC5P-PE, SC5P-R2. See https://kb.10xgenomics.com/hc/en-us/articles/115003764132-How-does-Cell-Ranger-auto-detect-chemistry- for more information."
+  echo ""
+
+
   echo "   --cores"
   echo "        type: integer"
   echo "        Set max cores the pipeline may request at one time."
@@ -565,6 +572,14 @@ while [[ $# -gt 0 ]]; do
             VIASH_PAR_EXPECT_CELLS=$(ViashRemoveFlags "$1")
             shift 1
             ;;
+        --chemistry)
+            VIASH_PAR_CHEMISTRY="$2"
+            shift 2
+            ;;
+        --chemistry=*)
+            VIASH_PAR_CHEMISTRY=$(ViashRemoveFlags "$1")
+            shift 1
+            ;;
         --cores)
             VIASH_PAR_CORES="$2"
             shift 2
@@ -650,6 +665,9 @@ fi
 if [ -z "$VIASH_PAR_EXPECT_CELLS" ]; then
   VIASH_PAR_EXPECT_CELLS="3000"
 fi
+if [ -z "$VIASH_PAR_CHEMISTRY" ]; then
+  VIASH_PAR_CHEMISTRY="auto"
+fi
 
 
 # detect volumes from file arguments
@@ -704,6 +722,7 @@ $( if [ ! -z ${VIASH_PAR_INPUT+x} ]; then echo "par_input='$VIASH_PAR_INPUT'"; f
 $( if [ ! -z ${VIASH_PAR_TRANSCRIPTOME+x} ]; then echo "par_transcriptome='$VIASH_PAR_TRANSCRIPTOME'"; fi )
 $( if [ ! -z ${VIASH_PAR_OUTPUT+x} ]; then echo "par_output='$VIASH_PAR_OUTPUT'"; fi )
 $( if [ ! -z ${VIASH_PAR_EXPECT_CELLS+x} ]; then echo "par_expect_cells='$VIASH_PAR_EXPECT_CELLS'"; fi )
+$( if [ ! -z ${VIASH_PAR_CHEMISTRY+x} ]; then echo "par_chemistry='$VIASH_PAR_CHEMISTRY'"; fi )
 $( if [ ! -z ${VIASH_PAR_CORES+x} ]; then echo "par_cores='$VIASH_PAR_CORES'"; fi )
 $( if [ ! -z ${VIASH_PAR_MEMORY+x} ]; then echo "par_memory='$VIASH_PAR_MEMORY'"; fi )
 meta_functionality_name='$VIASH_META_FUNCTIONALITY_NAME'
@@ -733,12 +752,9 @@ fi
 if [ ! -z "\$par_expect_cells" ]; then 
   extra_params+=( "--expect-cells" "\$par_expect_cells" )
 fi
-# if [ ! -z "\$par_libraries" ]; then 
-#   extra_params+=( "--libraries" "\$par_libraries" )
-# fi
-# if [ ! -z "\$par_feature_ref" ]; then 
-#   extra_params+=( "--feature-ref" "\$par_feature_ref" )
-# fi
+if [ ! -z "\$par_chemistry" ]; then 
+  extra_params+=( "--chemistry" "\$par_chemistry" )
+fi
 
 echo "Running cellranger count"
 orig_pwd=\`pwd\`
@@ -754,17 +770,16 @@ cellranger count \\
   --transcriptome "\$par_transcriptome" \\
   "\${extra_params[@]}" \\
   --disable-ui \\
-  --nosecondary \\
-  --output-dir "\$par_output"
+  --nosecondary
 cd "\$orig_pwd"
 
-# echo "Copying output"
-# if [ -d "\$work_dir/\$id/outs/" ]; then
-#   if [ ! -d "\$par_output" ]; then
-#     mkdir -p "\$par_output"
-#   fi
-#   mv "\$work_dir/\$id/outs/"* "\$par_output"
-# fi
+echo "Copying output"
+if [ -d "\$work_dir/\$id/outs/" ]; then
+  if [ ! -d "\$par_output" ]; then
+    mkdir -p "\$par_output"
+  fi
+  mv "\$work_dir/\$id/outs/"* "\$par_output"
+fi
 VIASHMAIN
 bash "\$tempscript" &
 wait "\$!"
