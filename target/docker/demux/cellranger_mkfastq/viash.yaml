@@ -853,5 +853,5 @@ info:
   output: "target/docker/demux/cellranger_mkfastq"
   executable: "target/docker/demux/cellranger_mkfastq/cellranger_mkfastq"
   viash_version: "0.5.10.1"
-  git_commit: "828ab942dc7d0d141399bd3cd7a16e1e9b5f6573"
+  git_commit: "91847c7054f4fbc36851d49c842b383cb2ce38c7"
   git_remote: "https://github.com/czbiohub/utilities"
