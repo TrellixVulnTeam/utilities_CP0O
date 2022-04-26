@@ -1,6 +1,6 @@
            namespace        functionality             platform            test_name exit_code duration               result[0m
-               demux            bcl2fastq               docker                start                                        [0m
              convert        split_10x_dir               docker                start                                        [0m
+               demux            bcl2fastq               docker                start                                        [0m
 [32m             convert        split_10x_dir               docker     build_executable         0        0              SUCCESS[0m
 [33m             convert        split_10x_dir               docker                tests        -1        0              MISSING[0m
              convert convert_10x_h5_to_h5ad               docker                start                                        [0m
@@ -23,7 +23,7 @@ File at URI 'file:/home/runner/work/utilities/utilities/src/rna_velocity/kb_pyth
 [31m        rna_velocity            kb_python               docker              test.py         1        0                ERROR[0m
                   qc    check_samplesheet               docker                start                                        [0m
             download   download_basespace               docker                start                                        [0m
-[32m            download        download_file               docker     build_executable         0       10              SUCCESS[0m
+[32m            download        download_file               docker     build_executable         0       11              SUCCESS[0m
 [32m            download        download_file               docker          run_test.sh         0        1              SUCCESS[0m
              combine       combine_tables               docker                start                                        [0m
 [32m             combine       combine_tables               docker     build_executable         0        0              SUCCESS[0m
@@ -34,8 +34,8 @@ File at URI 'file:/home/runner/work/utilities/utilities/src/alignment/spacerange
 [31m           alignment    spaceranger_count               docker              test.py         1        0                ERROR[0m
            alignment     cellranger_count               docker                start                                        [0m
 [32m            download   download_basespace               docker     build_executable         0        0              SUCCESS[0m
-[32m            download   download_basespace               docker          run_test.sh         0       59              SUCCESS[0m
+[32m            download   download_basespace               docker          run_test.sh         0       63              SUCCESS[0m
             download  sync_resources_test               docker                start                                        [0m
 [32m            download  sync_resources_test               docker     build_executable         0        0              SUCCESS[0m
-[31m            download  sync_resources_test               docker          run_test.sh         1        1                ERROR[0m
+[31m            download  sync_resources_test               docker          run_test.sh         1        2                ERROR[0m
 /home/runner/work/utilities/utilities/resources_test/bs_195891710
