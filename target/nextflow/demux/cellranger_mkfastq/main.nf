@@ -163,7 +163,7 @@ process cellranger_mkfastq_process {
   echo { (params.debug == true) ? true : false }
   stageInMode "symlink"
   container "${container}"
-  publishDir "${params.publishDir}/${id}/", mode: 'copy', overwrite: true, enabled: !params.test
+
   input:
     tuple val(id), path(input), val(output), val(container), val(cli), val(_params)
   output:

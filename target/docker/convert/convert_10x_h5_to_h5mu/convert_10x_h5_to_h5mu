@@ -159,7 +159,7 @@ function ViashHelp {
 
   echo "   --output"
   echo "        type: file, required parameter, output"
-  echo "        example: output.h5ad"
+  echo "        example: output.h5mu"
   echo "        Counts in MuData format."
   echo ""
 
