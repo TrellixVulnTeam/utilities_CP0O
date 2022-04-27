@@ -928,5 +928,5 @@ info:
   output: "target/docker/alignment/spaceranger_count"
   executable: "target/docker/alignment/spaceranger_count/spaceranger_count"
   viash_version: "0.5.10.1"
-  git_commit: "fe14e9f22e91931970fd0f8147c8fbedf70f09d1"
+  git_commit: "b534d46d0e13c785e99586973d8b3890b574db6a"
   git_remote: "https://github.com/czbiohub/utilities"
