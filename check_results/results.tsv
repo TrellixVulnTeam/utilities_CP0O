@@ -13,7 +13,7 @@
 [32m            download  sync_resources_test               docker     build_executable         0        0              SUCCESS[0m
 [31m            download  sync_resources_test               docker          run_test.sh         1        2                ERROR[0m
             download   download_basespace               docker                start                                        [0m
-[32m          multiomics  cellranger_cite_seq               docker     build_executable         0        3              SUCCESS[0m
+[32m          multiomics  cellranger_cite_seq               docker     build_executable         0        4              SUCCESS[0m
 [33m          multiomics  cellranger_cite_seq               docker                tests        -1        0              MISSING[0m
           multiomics cellranger_arc_count               docker                start                                        [0m
 [32m          multiomics cellranger_arc_count               docker     build_executable         0        0              SUCCESS[0m
@@ -24,17 +24,16 @@
            alignment     cellranger_count               docker                start                                        [0m
                demux            bcl2fastq               docker                start                                        [0m
         rna_velocity               loompy               docker                start                                        [0m
-File at URI 'file:/home/runner/work/utilities/utilities/src/rna_velocity/loompy/test.py' not found
 [32m        rna_velocity               loompy               docker     build_executable         0        3              SUCCESS[0m
-[31m        rna_velocity               loompy               docker              test.py         1        0                ERROR[0m
+[33m        rna_velocity               loompy               docker                tests        -1        0              MISSING[0m
                   qc    check_samplesheet               docker                start                                        [0m
             download        download_file               docker                start                                        [0m
 [32m            download        download_file               docker     build_executable         0        0              SUCCESS[0m
 [32m            download        download_file               docker          run_test.sh         0        1              SUCCESS[0m
                demux  spaceranger_mkfastq               docker                start                                        [0m
-[32m               demux  spaceranger_mkfastq               docker     build_executable         0        3              SUCCESS[0m
+[32m               demux  spaceranger_mkfastq               docker     build_executable         0        4              SUCCESS[0m
 [33m               demux  spaceranger_mkfastq               docker                tests        -1        0              MISSING[0m
                demux   cellranger_mkfastq               docker                start                                        [0m
-[32m            download   download_basespace               docker     build_executable         0        4              SUCCESS[0m
-[32m            download   download_basespace               docker          run_test.sh         0       89              SUCCESS[0m
+[32m            download   download_basespace               docker     build_executable         0        5              SUCCESS[0m
+[32m            download   download_basespace               docker          run_test.sh         0      102              SUCCESS[0m
 /home/runner/work/utilities/utilities/resources_test/cellranger_tiny_fastq

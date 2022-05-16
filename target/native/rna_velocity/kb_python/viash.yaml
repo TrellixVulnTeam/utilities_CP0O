@@ -1215,12 +1215,7 @@ functionality:
   description: "Uknown"
   usage: "python script.py \\\n  --input /path/to/bcl \\\n  --sample_sheet sample_sheet.csv\
     \ \\\n  --output fastqs\n"
-  tests:
-  - type: "python_script"
-    path: "test.py"
-    is_executable: true
-  - type: "file"
-    path: "../../../resources_test/bs_195891710"
+  tests: []
   info: {}
   dummy_arguments: []
   set_wd_to_resources_dir: false
@@ -1234,5 +1229,5 @@ info:
   output: "target/native/rna_velocity/kb_python"
   executable: "target/native/rna_velocity/kb_python/kb_python"
   viash_version: "0.5.11"
-  git_commit: "8834894859d389384068efb2f42c59d8b8504fb4"
+  git_commit: "cd61908656e2e633f09b5c9fa2210d34f545f3e4"
   git_remote: "https://github.com/czbiohub/utilities"

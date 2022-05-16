@@ -474,5 +474,5 @@ info:
   output: "target/native/multiomics/cellranger_arc_count"
   executable: "target/native/multiomics/cellranger_arc_count/cellranger_arc_count"
   viash_version: "0.5.11"
-  git_commit: "8834894859d389384068efb2f42c59d8b8504fb4"
+  git_commit: "cd61908656e2e633f09b5c9fa2210d34f545f3e4"
   git_remote: "https://github.com/czbiohub/utilities"
