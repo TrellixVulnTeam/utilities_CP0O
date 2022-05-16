@@ -12,7 +12,5 @@ bin/nextflow \
   run . \
   -main-script workflows/mapping_cellranger/main.nf \
   -entry test_wf \
-  -resume
-
-# -c workflows/1_ingestion/bd_rhapsody_wta/nextflow.config \
-
+  -resume \
+  -with-docker

@@ -12,4 +12,5 @@ bin/nextflow \
   run . \
   -main-script workflows/demux_cellranger/main.nf \
   -entry test_wf \
-  -resume
+  -resume \
+  -with-docker
