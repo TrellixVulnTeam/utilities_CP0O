@@ -769,5 +769,5 @@ info:
   output: "target/docker/download/download_file"
   executable: "target/docker/download/download_file/download_file"
   viash_version: "0.5.11"
-  git_commit: "d87009916be63c6ec9e6a9555f80bdb3b64698cd"
+  git_commit: "42d1a7aa2caee08fdcc9cebb35512834f36ccc1f"
   git_remote: "https://github.com/czbiohub/utilities"
