@@ -736,5 +736,5 @@ info:
   output: "target/docker/convert/convert_10x_h5_to_h5mu"
   executable: "target/docker/convert/convert_10x_h5_to_h5mu/convert_10x_h5_to_h5mu"
   viash_version: "0.5.11"
-  git_commit: "42d1a7aa2caee08fdcc9cebb35512834f36ccc1f"
+  git_commit: "d396e63c481e071f1a2cac4dc63aae4020d83924"
   git_remote: "https://github.com/czbiohub/utilities"
