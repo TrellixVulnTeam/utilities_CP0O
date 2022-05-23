@@ -1,12 +1,15 @@
-The working directory for the namespace tests is /tmp/viash_ns_test9464577831416568449
+The working directory for the namespace tests is /tmp/viash_ns_test3028355908979303608
            namespace        functionality             platform            test_name exit_code duration               result[0m
+        rna_velocity               loompy               docker                start                                        [0m
           multiomics  cellranger_arc_aggr               docker                start                                        [0m
-            transfer              publish               docker                start                                        [0m
+[32m        rna_velocity               loompy               docker     build_executable         0        0              SUCCESS[0m
 [32m          multiomics  cellranger_arc_aggr               docker     build_executable         0        0              SUCCESS[0m
 [33m          multiomics  cellranger_arc_aggr               docker                tests        -1        0              MISSING[0m
+[33m        rna_velocity               loompy               docker                tests        -1        0              MISSING[0m
           multiomics  cellranger_cite_seq               docker                start                                        [0m
+            transfer              publish               docker                start                                        [0m
 [32m            transfer              publish               docker     build_executable         0        0              SUCCESS[0m
-[32m            transfer              publish               docker          run_test.sh         0        2              SUCCESS[0m
+[32m            transfer              publish               docker          run_test.sh         0        1              SUCCESS[0m
             download  sync_resources_test               docker                start                                        [0m
 [32m          multiomics  cellranger_cite_seq               docker     build_executable         0        4              SUCCESS[0m
 [33m          multiomics  cellranger_cite_seq               docker                tests        -1        0              MISSING[0m
@@ -17,11 +20,11 @@ The working directory for the namespace tests is /tmp/viash_ns_test9464577831416
 [32m            download  sync_resources_test               docker     build_executable         0        0              SUCCESS[0m
 [31m            download  sync_resources_test               docker          run_test.sh         1        2                ERROR[0m
             download        download_file               docker                start                                        [0m
-[32m             combine       combine_tables               docker     build_executable         0        3              SUCCESS[0m
+[32m             combine       combine_tables               docker     build_executable         0        2              SUCCESS[0m
 [33m             combine       combine_tables               docker                tests        -1        0              MISSING[0m
                   qc    check_samplesheet               docker                start                                        [0m
-[33mviash ns: Missing resource /tmp/viash_ns_test9464577831416568449/viash_test_check_samplesheet7479815992615568270/test_test.py/bs_195891710 as specified in file:/home/runner/work/utilities/utilities/src/qc/check_samplesheet/config.vsh.yaml[0m
-[33mviash ns: Missing resource /tmp/viash_ns_test9464577831416568449/viash_test_check_samplesheet7479815992615568270/test_test.py/bs_195891710 as specified in file:/home/runner/work/utilities/utilities/src/qc/check_samplesheet/config.vsh.yaml[0m
+[33mviash ns: Missing resource /tmp/viash_ns_test3028355908979303608/viash_test_check_samplesheet8527114685986234014/test_test.py/bs_195891710 as specified in file:/home/runner/work/utilities/utilities/src/qc/check_samplesheet/config.vsh.yaml[0m[33mviash ns: Missing resource /tmp/viash_ns_test3028355908979303608/viash_test_check_samplesheet8527114685986234014/test_test.py/bs_195891710 as specified in file:/home/runner/work/utilities/utilities/src/qc/check_samplesheet/config.vsh.yaml[0m
+
 [33m                  qc    check_samplesheet               docker                tests        -1        0              MISSING[0m
              mapping    spaceranger_count               docker                start                                        [0m
 [32m             mapping    spaceranger_count               docker     build_executable         0        0              SUCCESS[0m
@@ -30,21 +33,25 @@ The working directory for the namespace tests is /tmp/viash_ns_test9464577831416
 [32m            download        download_file               docker     build_executable         0        2              SUCCESS[0m
 [32m            download        download_file               docker          run_test.sh         0        1              SUCCESS[0m
             download   download_basespace               docker                start                                        [0m
-[33mviash ns: Missing resource /tmp/viash_ns_test9464577831416568449/viash_test_cellranger_count2719679921771056812/test_test.py/cellranger_tiny_fastq as specified in file:/home/runner/work/utilities/utilities/src/mapping/cellranger_count/config.vsh.yaml[0m[33mviash ns: Missing resource /tmp/viash_ns_test9464577831416568449/viash_test_cellranger_count2719679921771056812/test_test.py/cellranger_tiny_fastq as specified in file:/home/runner/work/utilities/utilities/src/mapping/cellranger_count/config.vsh.yaml[0m
+[33mviash ns: Missing resource /tmp/viash_ns_test3028355908979303608/viash_test_cellranger_count7169834273245283765/test_test.py/cellranger_tiny_fastq as specified in file:/home/runner/work/utilities/utilities/src/mapping/cellranger_count/config.vsh.yaml[0m[33mviash ns: Missing resource /tmp/viash_ns_test3028355908979303608/viash_test_cellranger_count7169834273245283765/test_test.py/cellranger_tiny_fastq as specified in file:/home/runner/work/utilities/utilities/src/mapping/cellranger_count/config.vsh.yaml[0m
 
 [33m             mapping     cellranger_count               docker                tests        -1        0              MISSING[0m
+             mapping cellranger_count_split               docker                start                                        [0m
+[32m             mapping cellranger_count_split               docker     build_executable         0        0              SUCCESS[0m
+[33m             mapping cellranger_count_split               docker                tests        -1        0              MISSING[0m
         rna_velocity            kb_python               docker                start                                        [0m
-[32m        rna_velocity            kb_python               docker     build_executable         0        5              SUCCESS[0m
+[32m        rna_velocity            kb_python               docker     build_executable         0        4              SUCCESS[0m
 [33m        rna_velocity            kb_python               docker                tests        -1        0              MISSING[0m
-        rna_velocity               loompy               docker                start                                        [0m
-[32m        rna_velocity               loompy               docker     build_executable         0        0              SUCCESS[0m
-[33m        rna_velocity               loompy               docker                tests        -1        0              MISSING[0m
+               demux   cellranger_mkfastq               docker                start                                        [0m
+[33mviash ns: Missing resource /tmp/viash_ns_test3028355908979303608/viash_test_cellranger_mkfastq7567898492697471472/test_test.py/cellranger_tiny_bcl as specified in file:/home/runner/work/utilities/utilities/src/demux/cellranger_mkfastq/config.vsh.yaml[0m
+[33mviash ns: Missing resource /tmp/viash_ns_test3028355908979303608/viash_test_cellranger_mkfastq7567898492697471472/test_test.py/cellranger_tiny_bcl as specified in file:/home/runner/work/utilities/utilities/src/demux/cellranger_mkfastq/config.vsh.yaml[0m
+[33m               demux   cellranger_mkfastq               docker                tests        -1        0              MISSING[0m
                demux  spaceranger_mkfastq               docker                start                                        [0m
 [32m               demux  spaceranger_mkfastq               docker     build_executable         0        4              SUCCESS[0m
 [33m               demux  spaceranger_mkfastq               docker                tests        -1        0              MISSING[0m
                demux            bcl2fastq               docker                start                                        [0m
-[33mviash ns: Missing resource /tmp/viash_ns_test9464577831416568449/viash_test_bcl2fastq9414079496377529496/test_test.py/bs_195891710 as specified in file:/home/runner/work/utilities/utilities/src/demux/bcl2fastq/config.vsh.yaml[0m
-[33mviash ns: Missing resource /tmp/viash_ns_test9464577831416568449/viash_test_bcl2fastq9414079496377529496/test_test.py/bs_195891710 as specified in file:/home/runner/work/utilities/utilities/src/demux/bcl2fastq/config.vsh.yaml[0m
+[33mviash ns: Missing resource /tmp/viash_ns_test3028355908979303608/viash_test_bcl2fastq9911708609765737796/test_test.py/bs_195891710 as specified in file:/home/runner/work/utilities/utilities/src/demux/bcl2fastq/config.vsh.yaml[0m
+[33mviash ns: Missing resource /tmp/viash_ns_test3028355908979303608/viash_test_bcl2fastq9911708609765737796/test_test.py/bs_195891710 as specified in file:/home/runner/work/utilities/utilities/src/demux/bcl2fastq/config.vsh.yaml[0m
 [33m               demux            bcl2fastq               docker                tests        -1        0              MISSING[0m
              convert convert_10x_h5_to_h5mu               docker                start                                        [0m
 [32m             convert convert_10x_h5_to_h5mu               docker     build_executable         0        0              SUCCESS[0m
@@ -52,12 +59,5 @@ The working directory for the namespace tests is /tmp/viash_ns_test9464577831416
              convert convert_10x_h5_to_h5ad               docker                start                                        [0m
 [32m             convert convert_10x_h5_to_h5ad               docker     build_executable         0        0              SUCCESS[0m
 [33m             convert convert_10x_h5_to_h5ad               docker                tests        -1        0              MISSING[0m
-             convert        split_10x_dir               docker                start                                        [0m
-[32m             convert        split_10x_dir               docker     build_executable         0        0              SUCCESS[0m
-[33m             convert        split_10x_dir               docker                tests        -1        0              MISSING[0m
 [32m            download   download_basespace               docker     build_executable         0        0              SUCCESS[0m
-[32m            download   download_basespace               docker          run_test.sh         0      131              SUCCESS[0m
-               demux   cellranger_mkfastq               docker                start                                        [0m
-[33mviash ns: Missing resource /tmp/viash_ns_test9464577831416568449/viash_test_cellranger_mkfastq9772722061347198695/test_test.py/cellranger_tiny_bcl as specified in file:/home/runner/work/utilities/utilities/src/demux/cellranger_mkfastq/config.vsh.yaml[0m
-[33mviash ns: Missing resource /tmp/viash_ns_test9464577831416568449/viash_test_cellranger_mkfastq9772722061347198695/test_test.py/cellranger_tiny_bcl as specified in file:/home/runner/work/utilities/utilities/src/demux/cellranger_mkfastq/config.vsh.yaml[0m
-[33m               demux   cellranger_mkfastq               docker                tests        -1        0              MISSING[0m
+[32m            download   download_basespace               docker          run_test.sh         0      117              SUCCESS[0m

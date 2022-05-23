@@ -546,5 +546,5 @@ info:
   output: "target/native/multiomics/cellranger_arc_aggr"
   executable: "target/native/multiomics/cellranger_arc_aggr/cellranger_arc_aggr"
   viash_version: "0.5.12"
-  git_commit: "9c36f89eb8fbe3a42ffd19fc60baf29ce528fc5b"
+  git_commit: "e9496bdb95e75c8b87dc472e4a203c89b35aa96b"
   git_remote: "https://github.com/czbiohub/utilities"
