@@ -8,6 +8,12 @@
 // authors of this component should specify the license in the header of such
 // files, or include a separate license file detailing the licenses of all included
 // files.
+// 
+// Component authors:
+//  * Angela Pisco (author) {github: aopisco, orcid: 0000-0003-0142-2355}
+//  * Samuel D'Souza (author) {github: srdsam}
+//  * Robrecht Cannoodt <rcannood@gmail.com> (author, maintainer) {github:
+// rcannood, orcid: 0000-0003-3641-729X}
 
 nextflow.enable.dsl=2
 
@@ -90,6 +96,8 @@ thisFunctionality = [
 ]
 
 thisHelpMessage = '''cellranger_count_split main_build
+
+Split 10x Cell Ranger output directory into separate output fields.
 
 Options:
     --input

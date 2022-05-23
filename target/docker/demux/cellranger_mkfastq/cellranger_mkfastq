@@ -10,6 +10,12 @@
 # authors of this component should specify the license in the header of such
 # files, or include a separate license file detailing the licenses of all included
 # files.
+# 
+# Component authors:
+#  * Angela Pisco (author) {github: aopisco, orcid: 0000-0003-0142-2355}
+#  * Samuel D'Souza (author) {github: srdsam}
+#  * Robrecht Cannoodt <rcannood@gmail.com> (author, maintainer) {github:
+# rcannood, orcid: 0000-0003-3641-729X}
 
 set -e
 
@@ -382,6 +388,7 @@ function ViashDockerfile {
 FROM ghcr.io/data-intuitive/cellranger:6.1
 
 RUN :
+LABEL authors="Angela Pisco (author) {github: aopisco, orcid: 0000-0003-0142-2355}, Samuel D'Souza (author) {github: srdsam}, Robrecht Cannoodt <rcannood@gmail.com> (author, maintainer) {github: rcannood, orcid: 0000-0003-3641-729X}"
 LABEL org.opencontainers.image.description="Companion container for running component demux cellranger_mkfastq"
 LABEL org.opencontainers.image.source="https://github.com/czbiohub/utilities"
 VIASHDOCKER

@@ -10,6 +10,12 @@
 # authors of this component should specify the license in the header of such
 # files, or include a separate license file detailing the licenses of all included
 # files.
+# 
+# Component authors:
+#  * Angela Pisco (author) {github: aopisco, orcid: 0000-0003-0142-2355}
+#  * Samuel D'Souza (author) {github: srdsam}
+#  * Robrecht Cannoodt <rcannood@gmail.com> (author, maintainer) {github:
+# rcannood, orcid: 0000-0003-3641-729X}
 
 set -e
 
@@ -150,6 +156,8 @@ VIASH_META_FUNCTIONALITY_NAME="cellranger_count_split"
 # ViashHelp: Display helpful explanation about this executable
 function ViashHelp {
   echo "cellranger_count_split main_build"
+  echo ""
+  echo "Split 10x Cell Ranger output directory into separate output fields."
   echo ""
   echo "Options:"
   echo "    --input"
@@ -379,6 +387,7 @@ function ViashDockerfile {
 FROM ubuntu:focal
 
 RUN :
+LABEL authors="Angela Pisco (author) {github: aopisco, orcid: 0000-0003-0142-2355}, Samuel D'Souza (author) {github: srdsam}, Robrecht Cannoodt <rcannood@gmail.com> (author, maintainer) {github: rcannood, orcid: 0000-0003-3641-729X}"
 LABEL org.opencontainers.image.description="Companion container for running component mapping cellranger_count_split"
 LABEL org.opencontainers.image.source="https://github.com/czbiohub/utilities"
 VIASHDOCKER
