@@ -1218,5 +1218,5 @@ info:
   platform: "nextflow"
   output: "target/nextflow/demux/spaceranger_mkfastq"
   viash_version: "0.5.12"
-  git_commit: "e9496bdb95e75c8b87dc472e4a203c89b35aa96b"
+  git_commit: "a676ceff2ad4a4e68e68b37fba7b2d4e8f5e26f1"
   git_remote: "https://github.com/czbiohub/utilities"
