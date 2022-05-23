@@ -1020,5 +1020,5 @@ info:
   output: "target/docker/rna_velocity/loompy"
   executable: "target/docker/rna_velocity/loompy/loompy"
   viash_version: "0.5.12"
-  git_commit: "a676ceff2ad4a4e68e68b37fba7b2d4e8f5e26f1"
+  git_commit: "37af02e08b6e7a8a00b8b757089c9a1ede70814a"
   git_remote: "https://github.com/czbiohub/utilities"
