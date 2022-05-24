@@ -544,6 +544,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --input_fastqs)
             VIASH_PAR_INPUT_FASTQS="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --input_fastqs. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --input_fastqs=*)
@@ -552,6 +553,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --input_tif)
             VIASH_PAR_INPUT_TIF="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --input_tif. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --input_tif=*)
@@ -560,6 +562,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --reference_genome)
             VIASH_PAR_REFERENCE_GENOME="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --reference_genome. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --reference_genome=*)
@@ -568,6 +571,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --output)
             VIASH_PAR_OUTPUT="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --output. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --output=*)
@@ -576,6 +580,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --id)
             VIASH_PAR_ID="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --id. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --id=*)
@@ -584,6 +589,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --sample)
             VIASH_PAR_SAMPLE="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --sample. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --sample=*)
@@ -592,6 +598,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --lanes)
             VIASH_PAR_LANES="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --lanes. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --lanes=*)
@@ -600,6 +607,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --slide)
             VIASH_PAR_SLIDE="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --slide. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --slide=*)
@@ -679,6 +687,32 @@ fi
 if [ -z "$VIASH_PAR_ID" ]; then
   VIASH_PAR_ID="output"
 fi
+
+
+# check whether parameters values are of the right type
+
+
+
+
+
+
+if [[ -n "$VIASH_PAR_LANES" ]]; then
+  if ! [[ "$VIASH_PAR_LANES" =~ ^[-+]?[0-9]+$ ]]; then
+    ViashError '--lanes' has to be an integer. Use "--help" to get more information on the parameters.
+    exit 1
+  fi
+fi
+
+
+
+# check whether parameters values are of the right type
+
+
+
+
+
+
+
 
 
 # detect volumes from file arguments

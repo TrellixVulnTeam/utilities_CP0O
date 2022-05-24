@@ -202,6 +202,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --input)
             VIASH_PAR_INPUT="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --input. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --input=*)
@@ -210,6 +211,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --sample_sheet)
             VIASH_PAR_SAMPLE_SHEET="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --sample_sheet. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --sample_sheet=*)
@@ -218,6 +220,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --output)
             VIASH_PAR_OUTPUT="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --output. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --output=*)
@@ -247,6 +250,16 @@ if [ -z "$VIASH_PAR_OUTPUT" ]; then
   ViashError '--output' is a required argument. Use "--help" to get more information on the parameters.
   exit 1
 fi
+
+
+
+# check whether parameters values are of the right type
+
+
+
+
+# check whether parameters values are of the right type
+
 
 
 

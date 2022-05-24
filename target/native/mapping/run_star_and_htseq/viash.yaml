@@ -14,7 +14,7 @@ functionality:
     - "homo"
     default: []
     required: true
-    values: []
+    choices: []
     direction: "input"
     multiple: false
     multiple_sep: ":"
@@ -49,6 +49,7 @@ functionality:
     default:
     - 16
     required: false
+    choices: []
     direction: "input"
     multiple: false
     multiple_sep: ":"
@@ -60,6 +61,7 @@ functionality:
     default:
     - 10
     required: false
+    choices: []
     direction: "input"
     multiple: false
     multiple_sep: ":"
@@ -71,6 +73,7 @@ functionality:
     default:
     - 0
     required: false
+    choices: []
     direction: "input"
     multiple: false
     multiple_sep: ":"
@@ -82,6 +85,7 @@ functionality:
     default:
     - 50000
     required: false
+    choices: []
     direction: "input"
     multiple: false
     multiple_sep: ":"
@@ -310,6 +314,7 @@ functionality:
                   ;;
               --taxon)
                   VIASH_PAR_TAXON="$2"
+                  [ $# -lt 2 ] && ViashError Not enough arguments passed to --taxon. Use "--help" to get more information on the parameters. && exit 1
                   shift 2
                   ;;
               --taxon=*)
@@ -318,6 +323,7 @@ functionality:
                   ;;
               --input)
                   VIASH_PAR_INPUT="$2"
+                  [ $# -lt 2 ] && ViashError Not enough arguments passed to --input. Use "--help" to get more information on the parameters. && exit 1
                   shift 2
                   ;;
               --input=*)
@@ -326,6 +332,7 @@ functionality:
                   ;;
               --output)
                   VIASH_PAR_OUTPUT="$2"
+                  [ $# -lt 2 ] && ViashError Not enough arguments passed to --output. Use "--help" to get more information on the parameters. && exit 1
                   shift 2
                   ;;
               --output=*)
@@ -334,6 +341,7 @@ functionality:
                   ;;
               --star_proc)
                   VIASH_PAR_STAR_PROC="$2"
+                  [ $# -lt 2 ] && ViashError Not enough arguments passed to --star_proc. Use "--help" to get more information on the parameters. && exit 1
                   shift 2
                   ;;
               --star_proc=*)
@@ -342,6 +350,7 @@ functionality:
                   ;;
               --num_partitions)
                   VIASH_PAR_NUM_PARTITIONS="$2"
+                  [ $# -lt 2 ] && ViashError Not enough arguments passed to --num_partitions. Use "--help" to get more information on the parameters. && exit 1
                   shift 2
                   ;;
               --num_partitions=*)
@@ -350,6 +359,7 @@ functionality:
                   ;;
               --partition_id)
                   VIASH_PAR_PARTITION_ID="$2"
+                  [ $# -lt 2 ] && ViashError Not enough arguments passed to --partition_id. Use "--help" to get more information on the parameters. && exit 1
                   shift 2
                   ;;
               --partition_id=*)
@@ -358,6 +368,7 @@ functionality:
                   ;;
               --min_size)
                   VIASH_PAR_MIN_SIZE="$2"
+                  [ $# -lt 2 ] && ViashError Not enough arguments passed to --min_size. Use "--help" to get more information on the parameters. && exit 1
                   shift 2
                   ;;
               --min_size=*)
@@ -403,6 +414,48 @@ functionality:
       if [ -z "$VIASH_PAR_MIN_SIZE" ]; then
         VIASH_PAR_MIN_SIZE="50000"
       fi
+      
+      
+      # check whether parameters values are of the right type
+      
+      
+      
+      if [[ -n "$VIASH_PAR_STAR_PROC" ]]; then
+        if ! [[ "$VIASH_PAR_STAR_PROC" =~ ^[-+]?[0-9]+$ ]]; then
+          ViashError '--star_proc' has to be an integer. Use "--help" to get more information on the parameters.
+          exit 1
+        fi
+      fi
+      
+      if [[ -n "$VIASH_PAR_NUM_PARTITIONS" ]]; then
+        if ! [[ "$VIASH_PAR_NUM_PARTITIONS" =~ ^[-+]?[0-9]+$ ]]; then
+          ViashError '--num_partitions' has to be an integer. Use "--help" to get more information on the parameters.
+          exit 1
+        fi
+      fi
+      
+      if [[ -n "$VIASH_PAR_PARTITION_ID" ]]; then
+        if ! [[ "$VIASH_PAR_PARTITION_ID" =~ ^[-+]?[0-9]+$ ]]; then
+          ViashError '--partition_id' has to be an integer. Use "--help" to get more information on the parameters.
+          exit 1
+        fi
+      fi
+      
+      if [[ -n "$VIASH_PAR_MIN_SIZE" ]]; then
+        if ! [[ "$VIASH_PAR_MIN_SIZE" =~ ^[-+]?[0-9]+$ ]]; then
+          ViashError '--min_size' has to be an integer. Use "--help" to get more information on the parameters.
+          exit 1
+        fi
+      fi
+      
+      
+      # check whether parameters values are of the right type
+      
+      
+      
+      
+      
+      
       
       
       cat << VIASHEOF | bash
@@ -747,5 +800,5 @@ info:
   output: "target/native/mapping/run_star_and_htseq"
   executable: "target/native/mapping/run_star_and_htseq/run_star_and_htseq"
   viash_version: "0.5.12"
-  git_commit: "ce7f2576a32eb986fddc8c8cc03222c1b096612a"
+  git_commit: "4d25ebe4fec730371e7804a693dec76d9cdfb289"
   git_remote: "https://github.com/czbiohub/utilities"

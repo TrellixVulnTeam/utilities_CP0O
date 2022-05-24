@@ -537,6 +537,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --libraries_path)
             VIASH_PAR_LIBRARIES_PATH="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --libraries_path. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --libraries_path=*)
@@ -545,6 +546,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --reference_genome)
             VIASH_PAR_REFERENCE_GENOME="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --reference_genome. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --reference_genome=*)
@@ -553,6 +555,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --output)
             VIASH_PAR_OUTPUT="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --output. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --output=*)
@@ -561,6 +564,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --run_id)
             VIASH_PAR_RUN_ID="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --run_id. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --run_id=*)
@@ -569,6 +573,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --peaks)
             VIASH_PAR_PEAKS="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --peaks. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --peaks=*)
@@ -577,6 +582,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --neurips)
             VIASH_PAR_NEURIPS="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --neurips. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --neurips=*)
@@ -656,6 +662,28 @@ fi
 if [ -z "$VIASH_PAR_NEURIPS" ]; then
   VIASH_PAR_NEURIPS="false"
 fi
+
+
+# check whether parameters values are of the right type
+
+
+
+
+
+if [[ -n "$VIASH_PAR_NEURIPS" ]]; then
+  if ! [[ "$VIASH_PAR_NEURIPS" =~ ^(true|True|TRUE|false|False|FALSE|yes|Yes|YES|no|No|NO)$ ]]; then
+    ViashError '--neurips' has to be a boolean. Use "--help" to get more information on the parameters.
+    exit 1
+  fi
+fi
+
+
+# check whether parameters values are of the right type
+
+
+
+
+
 
 
 # detect volumes from file arguments

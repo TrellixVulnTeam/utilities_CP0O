@@ -221,6 +221,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --input)
             VIASH_PAR_INPUT="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --input. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --input=*)
@@ -229,6 +230,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --reference_genome)
             VIASH_PAR_REFERENCE_GENOME="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --reference_genome. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --reference_genome=*)
@@ -237,6 +239,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --metadata)
             VIASH_PAR_METADATA="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --metadata. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --metadata=*)
@@ -245,6 +248,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --partition_id)
             VIASH_PAR_PARTITION_ID="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --partition_id. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --partition_id=*)
@@ -253,6 +257,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --num_partitions)
             VIASH_PAR_NUM_PARTITIONS="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --num_partitions. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --num_partitions=*)
@@ -261,6 +266,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --cell_count)
             VIASH_PAR_CELL_COUNT="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --cell_count. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --cell_count=*)
@@ -269,6 +275,7 @@ while [[ $# -gt 0 ]]; do
             ;;
         --output)
             VIASH_PAR_OUTPUT="$2"
+            [ $# -lt 2 ] && ViashError Not enough arguments passed to --output. Use "--help" to get more information on the parameters. && exit 1
             shift 2
             ;;
         --output=*)
@@ -312,6 +319,36 @@ fi
 if [ -z "$VIASH_PAR_CELL_COUNT" ]; then
   VIASH_PAR_CELL_COUNT="3000"
 fi
+
+
+# check whether parameters values are of the right type
+
+
+
+
+if [[ -n "$VIASH_PAR_NUM_PARTITIONS" ]]; then
+  if ! [[ "$VIASH_PAR_NUM_PARTITIONS" =~ ^[-+]?[0-9]+$ ]]; then
+    ViashError '--num_partitions' has to be an integer. Use "--help" to get more information on the parameters.
+    exit 1
+  fi
+fi
+
+if [[ -n "$VIASH_PAR_CELL_COUNT" ]]; then
+  if ! [[ "$VIASH_PAR_CELL_COUNT" =~ ^[-+]?[0-9]+$ ]]; then
+    ViashError '--cell_count' has to be an integer. Use "--help" to get more information on the parameters.
+    exit 1
+  fi
+fi
+
+
+
+# check whether parameters values are of the right type
+
+
+
+
+
+
 
 
 cat << VIASHEOF | bash
