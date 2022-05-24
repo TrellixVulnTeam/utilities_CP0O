@@ -616,5 +616,5 @@ info:
   output: "target/native/rna_velocity/loompy"
   executable: "target/native/rna_velocity/loompy/loompy"
   viash_version: "0.5.12"
-  git_commit: "b9d19eda28b416cfddecd9d45300ce273f68adb4"
+  git_commit: "ce7f2576a32eb986fddc8c8cc03222c1b096612a"
   git_remote: "https://github.com/czbiohub/utilities"
