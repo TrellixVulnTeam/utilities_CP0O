@@ -1231,5 +1231,5 @@ info:
   platform: "nextflow"
   output: "target/nextflow/download/sync_resources_test"
   viash_version: "0.5.12"
-  git_commit: "4d25ebe4fec730371e7804a693dec76d9cdfb289"
+  git_commit: "31b9d4ea3eb786aceb11993622d162d0d64b9d81"
   git_remote: "https://github.com/czbiohub/utilities"
